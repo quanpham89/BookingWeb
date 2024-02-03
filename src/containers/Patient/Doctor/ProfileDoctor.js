@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import moment from 'moment'
-import localization from 'moment/locale/vi'
 import { LANGUAGES } from '../../../utils';
 import _ from 'lodash';
 import {getProfileDoctorById} from '../../../services/userService'

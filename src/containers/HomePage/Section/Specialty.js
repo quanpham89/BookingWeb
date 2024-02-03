@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import imgDoctor from '../../../assets/imgDoctor.jpg'
 import {getAllSpecialty} from '../../../services/userService'
 import { withRouter } from 'react-router-dom';
 

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import * as actions from '../../../store/actions'
-import { Redirect, Route, Switch } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import { LANGUAGES, CRUD_ACTIONS, dateFormat} from '../../../utils/constant';
+import { LANGUAGES} from '../../../utils/constant';
 import DatePicker from '../../../components/Input/DatePicker';
 import Select from 'react-select';
 import moment from 'moment';
@@ -66,14 +65,14 @@ class ManageSchedule extends Component {
         let result = [];
         let language = this.props.language;
         if(inputData && inputData.length>0){
-            inputData.map((item, index)=>{
+            result = inputData.map((item, index)=>{
                 let obj = {}
                 let labelVi = `${item.lastName} ${item.firstName}`
                 let labelEn = `${item.firstName} ${item.lastName}`
 
                 obj.label = language ===LANGUAGES.VI ? labelVi : labelEn;
                 obj.value =  item.id
-                result.push(obj)
+                return obj;
             })
 
         }

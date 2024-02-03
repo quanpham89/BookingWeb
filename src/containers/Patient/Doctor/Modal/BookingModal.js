@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { LANGUAGES } from '../../../../utils';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {  Modal } from 'reactstrap';
 import './BookingModal.scss'
 import ProfileDoctor from "../ProfileDoctor"
 import _ from 'lodash'
@@ -11,8 +11,7 @@ import * as actions from '../../../../store/actions'
 import Select from 'react-select';
 import {postPatientBookingAppointment} from '../../../../services/userService'
 import {toast} from 'react-toastify';
-import NumericFormat  from 'react-number-format';
-import localization from 'moment/locale/vi'
+
 import moment from 'moment'
 import LoadingOverlay from 'react-loading-overlay';
 
@@ -62,11 +61,11 @@ class BookingModal extends Component {
         let result = [];
         let {language} = this.props
         if(item && item.length>0)
-        item.map(item=>{
+        result = item.map(item=>{
             let obj = {}
             obj.label = language ===LANGUAGES.VI ? item.valueVi : item.valueEn
             obj.value = item.keyMap
-            result.push(obj)
+            return obj 
         })
         return result
     }

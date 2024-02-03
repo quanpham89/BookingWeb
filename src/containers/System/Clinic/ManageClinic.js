@@ -68,14 +68,14 @@ class ManageClinic extends Component {
         let language = this.props.language;
         if(inputData && inputData.length>0){
                 if(type === 'CLINIC'){
-                inputData.map((item, index)=>{
+                result = inputData.map((item, index)=>{
                     let obj = {}
                     let labelVi =  item.name 
                     let labelEn =  item.nameEn
     
                     obj.label = language === LANGUAGES.VI ? labelVi : labelEn;
                     obj.value =  item.id
-                    result.push(obj)
+                    return obj
                 })
             }
 

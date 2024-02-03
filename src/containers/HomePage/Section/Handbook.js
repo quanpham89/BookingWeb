@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {getAllHandbook} from '../../../services/userService'
-import {getAllSpecialty} from '../../../services/userService'
 import { FormattedMessage } from 'react-intl';
-import * as actions from "../../../store/actions"
-import { LANGUAGES } from '../../../utils';import Slider from "react-slick";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

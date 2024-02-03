@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import _ from 'lodash'
 import moment from 'moment'
 import HomeHeader from '../../HomePage/HomeHeader' 
 import {getDetailHandbookById} from '../../../services/userService'
 import './DetailHandbook.scss' 
-import { LANGUAGES } from '../../../utils';
 
 class DetailHandbook extends Component {
     constructor(props){
@@ -37,7 +34,6 @@ class DetailHandbook extends Component {
 
     
     render() {
-        let {language} = this.props
         let {detailHandbook}= this.state
         let createDate = moment(new Date(detailHandbook.createdAt)).format('DD/MM/YYYY')
         let updateDate = moment(new Date(detailHandbook.updatedAt)).format('DD/MM/YYYY')

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import _ from 'lodash'
 import HomeHeader from '../../HomePage/HomeHeader' 
@@ -8,7 +7,6 @@ import DoctorExtraInfo from '../Doctor//DoctorExtraInfo';
 import ProfileDoctor from '../Doctor/ProfileDoctor';
 import {getDetailClinic} from '../../../services/userService'
 import './DetailClinic.scss' 
-import { LANGUAGES } from '../../../utils';
 
 class DetailClinic extends Component {
     constructor(props){
@@ -55,7 +53,6 @@ class DetailClinic extends Component {
     
     render() {
         let {arrDoctorId, dataClinic } = this.state
-        let {language} = this.props
         return (  
             <div className='detail-specialty-container'>
                 <HomeHeader/>

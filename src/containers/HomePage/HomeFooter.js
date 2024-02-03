@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './HomeFooter.scss'
@@ -61,7 +60,7 @@ class HomeFooter extends Component {
                     </div>
                 </div>
                 <p className='copy'>&copy;2023, Copy by Pham Dinh Quan.
-                    <a href='#'> More Information</a>
+                    <a href='/home'> More Information</a>
                 </p>
 
 

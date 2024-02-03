@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-// import {getAllCodeService} from '../../../services/userService'
 import { LANGUAGES, CRUD_ACTIONS} from '../../../utils/constant';
 import CommonUtils from '../../../utils/CommonUtils';
 
@@ -9,7 +8,6 @@ import * as actions from '../../../store/actions'
 import './UserRedux.scss'
 
 import TableManageUser from './TableManageUser';
-import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css'
 class UserRedux extends Component {
     constructor(props){
@@ -211,14 +209,12 @@ class UserRedux extends Component {
     }
     
     render() {
-        let {email, password, firstName, lastName, phoneNumber,address, gender, position, role, avatar}= this.state;
+        let {email, password, firstName, lastName, phoneNumber,address, gender, position, role}= this.state;
         let language = this.props.language;
         let genders = this.state.genderArr;
         let isLoadingGenders = this.props.isLoadingGenders
         let roles = this.state.roleArr;
-        let isLoadingRoles = this.props.isLoadingRoles
         let positions = this.state.positionArr;
-        let isLoadingPosition = this.props.isLoadingPosition
         return (
             <div className='user-redux-container'>
                 <div className='title'>

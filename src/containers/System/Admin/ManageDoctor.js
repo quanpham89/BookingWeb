@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions'
-import * as ReactDOM from 'react-dom';
 import { LANGUAGES, CRUD_ACTIONS} from '../../../utils/constant';
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
@@ -94,54 +93,57 @@ class ManageDoctor extends Component {
         let language = this.props.language;
         if(inputData && inputData.length>0){
             if(type === 'USERS'){
-                inputData.map((item, index)=>{
+                result =  inputData.map((item, index)=>{
                     let obj = {}
                     let labelVi =  `${item.lastName} ${item.firstName}` 
                     let labelEn =  `${item.firstName} ${item.lastName}` 
     
                     obj.label = language === LANGUAGES.VI ? labelVi : labelEn;
                     obj.value =  item.id
-                    result.push(obj)
+                    return obj
                 })
             }else if(type === 'PRICE' ){
-                inputData.map((item, index)=>{
+                result = inputData.map((item, index)=>{
                     let obj = {}
                     let labelVi =  `${item.valueVi} VND`
                     let labelEn =  `${item.valueEn} USD`
     
                     obj.label = language === LANGUAGES.VI ? labelVi : labelEn;
                     obj.value =  item.keyMap
-                    result.push(obj)
+                    return obj
                 })
             }else if(type === 'PAYMENT' || type === 'PROVINCE'){
-                inputData.map((item, index)=>{
+                result = inputData.map((item, index)=>{
                     let obj = {}
                     let labelVi =  item.valueVi 
                     let labelEn =  item.valueEn 
     
                     obj.label = language === LANGUAGES.VI ? labelVi : labelEn;
                     obj.value =  item.keyMap
-                    result.push(obj)
+                    return obj
+
                 })
             }else if(type === 'SPECIALTY'){
-                inputData.map((item, index)=>{
+                result = inputData.map((item, index)=>{
                     let obj = {}
                     let labelVi =  item.name 
                     let labelEn =  item.nameEn
     
                     obj.label = language === LANGUAGES.VI ? labelVi : labelEn;
                     obj.value =  item.id
-                    result.push(obj)
+                    return obj
+
                 })
             }else if(type === 'CLINIC'){
-                inputData.map((item, index)=>{
+                result = inputData.map((item, index)=>{
                     let obj = {}
                     let labelVi =  item.name 
                     let labelEn =  item.nameEn
     
                     obj.label = language === LANGUAGES.VI ? labelVi : labelEn;
                     obj.value =  item.id
-                    result.push(obj)
+                    return obj
+
                 })
             }
 

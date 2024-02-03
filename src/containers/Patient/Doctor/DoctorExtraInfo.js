@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import * as actions from '../../../store/actions'
-import * as ReactDOM from 'react-dom';
-import { LANGUAGES, CRUD_ACTIONS} from '../../../utils/constant';
+import { LANGUAGES} from '../../../utils/constant';
 import  './DoctorExtraInfo.scss';
-import Select from 'react-select';
 import {getExtraInfoDoctorById} from '../../../services/userService'
 import NumericFormat  from 'react-number-format';
 

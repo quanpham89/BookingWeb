@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES } from '../../../utils';
 import {  Modal, ModalBody, ModalFooter, ModalHeader, Button } from 'reactstrap';
 import './RemedyModal.scss'
 import _ from 'lodash'
-import {toast} from 'react-toastify';
-import localization from 'moment/locale/vi'
-import moment from 'moment'
+
 import CommonUtils from '../../../utils/CommonUtils';
 
 
@@ -47,7 +43,7 @@ class RemedyModal extends Component {
         let data = e.target.files[0]
         if(data){
             let base64 = await CommonUtils.getBase64(data);
-            let file = URL.createObjectURL(data)
+            // let file = URL.createObjectURL(data)
             this.setState({
                 imgBase64: base64
             })
@@ -57,7 +53,7 @@ class RemedyModal extends Component {
         this.props.sendRemedy(this.state)
     }
     render() {
-        let {isOpenRemedy,closeRemedyModal, dataRemedyModal} = this.props;
+        let {isOpenRemedy,closeRemedyModal} = this.props;
         return ( 
             <Modal 
             isOpen={isOpenRemedy} 

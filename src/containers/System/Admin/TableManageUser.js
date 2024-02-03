@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions'
 
-// import {getAllUsers, createUser, deleteUser, editUser} from '../../services/userService'
 import  './TableManageUser.scss';
-// import react, react-markdown-editor-lite, and a markdown parser you like
-import * as ReactDOM from 'react-dom';
 import MarkdownIt from 'markdown-it';
-import MdEditor from 'react-markdown-editor-lite';
 // import style manually
 import 'react-markdown-editor-lite/lib/index.css';
 
@@ -16,12 +11,9 @@ import 'react-markdown-editor-lite/lib/index.css';
 // MdEditor.use(YOUR_PLUGINS_HERE);
 
 // Initialize a markdown parser
-const mdParser = new MarkdownIt(/* Markdown-it options */);
 
 // Finish!
-function handleEditorChange({ html, text }) {
-    console.log('handleEditorChange', html, text);
-}
+
 
 class TableManageUser extends Component {
     constructor(props){
