@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.manage-handbook-container{
+    padding: 20px;
+    .manage-handbook-title{
+        margin: 20px 0;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .add-new-handbook{
+        .col-6{
+            label{
+                margin: 0;
+            }
+        }
+        .preview-img-container{
+            .label-upload{
+                margin: 10px 0;
+            }
+        }
+    }
+}

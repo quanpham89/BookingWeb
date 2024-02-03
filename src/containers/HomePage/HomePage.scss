@@ -1,0 +1,186 @@
+// reset slick slider css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.slick-prev,
+.slick-next{
+    left: -20px !important;
+    background: #fff!important;
+    z-index: 9!important;
+    height: 48px!important   ;
+    width: 44px!important;
+    border: 2px solid #d7d7d7 !important;
+    opacity: 0.6;
+    &:hover{
+        background: #eceaea !important ;
+    }
+}
+.slick-prev::before,
+.slick-next::before{
+    font-family:  FontAwesome !important;
+    color: red !important;
+}
+.slick-prev::before{
+    content: '<' !important;
+    font-weight: 800;
+}
+.slick-next::before{
+    content: '>' !important;
+    font-weight: 800;
+
+}
+
+
+.slick-next{
+    left:  unset !important;
+    right: -15px!important;
+}
+
+.slick-disabled {
+    display: none !important;
+}
+
+
+
+.section-share{
+    margin-top: 10px;
+    height: 330px; 
+    &.section-specialty,
+    &.section-outstanding-doctor{
+        background: #f5f5f5;
+    }
+    &.section-about{
+        margin: 0 100px;
+        height: 500px !important;
+        border-top:1px solid #f5f5f5;
+        border-bottom:1px solid #f5f5f5;
+
+        .section-about-header{
+            padding: 20px 10px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .section-about-content{
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            .content-left{
+                width: 50%;
+            }
+            .content-right{
+                width: 50%;
+                p{
+                    text-align: center;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+    .section-body{
+        .section-customize{
+            cursor: pointer;
+            .bg-img{
+                width: 420px;
+                height: 180px;
+                background-color: #eee;
+                &.img-specialty{
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    
+                }
+                &.img-medical-facility{
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    
+                }
+                
+                &.img-outstanding-doctor{
+                    width: 120px;
+                    height: 120px;
+                    background: url('../../assets/outstandingDoctor.jpg');
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 50%;
+                    
+                }
+                &.img-handbook{
+                    
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                
+            }
+            &:hover{
+                color: #49bce2;
+                transition: 0.1s linear;
+            }
+        }
+        
+    }
+}
+
+.section-share{
+    .section-container{
+        margin: 0 100px;
+        display: flex;
+        flex-direction: column;
+        .section-header{
+            margin: 15px 0;
+            .title-section{
+                font-size: 22px;
+                font-weight: 600;
+            }
+            .btn-section{
+                display: block;
+                float: right;
+                padding: 10px 15px;
+                text-transform: uppercase;
+                border: none;
+                outline: none;
+                background: #ebebeb;
+                cursor: pointer;
+                &:hover{
+                    color: white;
+                    background: #f7d800;
+                    transition: 0.1s linear;
+                }
+            }
+        }
+        
+    }
+}
+
+.section-outstanding-doctor{
+    .slick-prev{
+        left: -16px !important;
+    }
+    .custom-border{
+        margin: 0 5px;
+        padding: 5px;
+        border: 1px solid orange;
+        .outer-background{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            &.img-outstanding-doctor{
+                width: 120px;
+                height: 120px;
+                // background: url('../../assets/outstandingDoctor.jpg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 50%;    
+            }
+        }
+    }
+}
+
+

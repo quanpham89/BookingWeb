@@ -1,0 +1,25 @@
+.manage-clinic-container{
+    padding: 0 15px;
+    .ms-title{
+        margin: 10px;
+        font-size: 17px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .add-new-clinic{
+        .preview-img-container{
+            .preview-img{
+                width: 40%;
+                cursor: no-drop;
+            }
+        }
+    }
+    .btn-change-clinic{
+        float: right;
+    }
+    
+    .btn-save-clinic{
+        float: right;
+    }
+}

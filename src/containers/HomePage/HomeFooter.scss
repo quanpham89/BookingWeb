@@ -1,0 +1,55 @@
+.home-footer{
+    padding-top: 20px;
+    background-color: #efefef;
+    .home-footer-body{
+        display: flex;
+        justify-content: space-evenly;
+        .content-left{
+            .logo{
+                margin: 10px 0;
+                width: 100%;
+                height: 50px;
+                background: url('../../assets/logo.svg') center center no-repeat;
+            }
+            .content-left-more-info{
+                .address,
+                .support,
+                .hotline{
+                    font-weight: 600;
+                    p{
+                        font-weight: 400;
+                        margin: 0;
+                    }
+                }
+            }
+
+        }
+        .content-middle{
+            .list-nav{
+                list-style-type: none !important;
+                color: #a2ccda;
+            }
+
+        }
+        .content-right{
+            .collaboration{
+                display: flex;
+                gap: 10px;
+                margin-bottom: 40px;
+                .collaboration-img{
+                width: 50px;
+                height: 50px;
+                background: url('../../assets/hospital.png') center center no-repeat;
+                }
+                .collaboration-title{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .copy{
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+}

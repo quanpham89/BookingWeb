@@ -1,120 +1,172 @@
 {
-    "common": {
-        "add": "Add",
-        "edit": "Edit",
-        "delete": "Delete",
-        "decentralize": "Decentralize",
-        "close": "Close",
-        "save": "Save",
-        "refresh": "Refresh",
-        "accept": "Accept",
-        "confirm": "Confirm",
-        "confirm-this-task": "Are you sure to process this task?",
-        "fail-to-load-data": "Fail to load data",
-        "unknown-error": "There was an error",
-        "internal-server-error": "Internal server error",
-        "bad-request": "Bad request",
-        "forbiden-request": "Invalid input data",
-        "fail-to-load-all-code": "Fail to load data from allcode",
-        "sum": "Sum",
-        "date-range-invalid": "Date range invalid"
+    "homeHeader":{
+        "speciality": "speciality",
+        "searchDoctor": "Find a doctor by speciality",
+        "healthFacility": "Health facilities",
+        "selectRoom": "Choose hospital clinic",
+        "doctor": "Doctor",
+        "selectDoctor": "Choose a good doctor",
+        "fee": "Check up package",
+        "checkHealth": "General health check",
+        "support": "Support",
+        "welcome": "Welcome"
+        
     },
-    "login": {
-        "login": "Login",
-        "username": "Username",
-        "password": "Password",
-        "userpass-wrong": "Invalid username or password!"
+    "banner":{
+        "mainTitleHeader":"Medical Platform",
+        "subTitleHeader":"Comprehensive health care",
+        "child1":"specialized examination",
+        "child2":"Remote examination",
+        "child3":"General test",
+        "child4":"Medical test",
+        "child5":"Mental health",
+        "child6":"Dental examination"
+    },
+    "homeFooter":{
+        "address": "Address of office: ",
+        "support":"Support customer: ",
+        "hotline": "Hotline (7a.m - 6p.m): ",
+        "contact":"Contact to collaboration: ",
+        "directory":"Directory medical",
+        "health":"Corporate health",
+        "change":"Enterprise digital transformation package",
+        "recruit":"Recruitment",
+        "question":"Question",
+        "clause":"Clause",
+        "policy":"Private policy",
+        "solve":"Solve complaint",
+        "activity":"Activity regulations",
+        "intro1": "Sponsor the content section 'mental health'",
+        "col2":"International specialist system",
+        "intro2":"Sponsor the content section 'specialized medicine'"
+        
     },
     "menu": {
-        "system": {
-            "header": "System",
-            "system-administrator": {
-                "header": "System Administrator",
-                "user-manage": "User manage",
-                "product-manage": "Package manage",
-                "register-package-group-or-account": "Register service package for group/account"
-            },
-            "system-parameter": {
-                "header": "System-parameter"
-            }
+        "admin":{
+            "manage-user":"Users",
+            "manage-doctor":"Manage doctor ",
+            "manage-admin":"Manage admin ",
+            "crud": "CRUD users",
+            "crud-redux": "CRUD redux",
+            "clinic":"Clinic",
+            "manage-clinic":"Manage clinic",
+            "specialty":"Specialty",
+            "manage-specialty": "Manage pecialty",
+            "handbook": "Handbook",
+            "manage-handbook":"Manage handbook"
+        },
+        "doctor": {
+            "manage-schedule-of-doctor": "Manage Doctor's Schedule",
+            "manage-schedule": "Manage Doctor's Schedule",
+            "manage-patient": "Manage Doctor's patient"
         }
     },
-    "system": {
-        "user-manage": {
-            "fail-to-load-fouser": "Fail to load system users list",
-            "user-id": "User ID",
-            "usertype": "User type",
-            "username": "Username",
-            "fullname": "Fullname",
-            "mobile": "Phone",
-            "email": "Email",
-            "status": "Status",
-            "add-user": "Add user",
-            "edit-user": "Edit user information",
-            "password": "Password",
-            "retype-password": "Retype password",
-            "add-user-success": "Add user successfully",
-            "edit-user-success": "Change user information successfully",
-            "add-user-fail": "Fail to add user",
-            "edit-user-fail": "Fail to change user information",
-            "del-user-success": "Delete user successfully",
-            "del-user-fail": "Fail to delete user",
-            "invalid-input": {
-                "username": "Please fill in username",
-                "fullname": "Please fill in fullname",
-                "password": "Please fill in password"
-            },
-            "sure-delete-user": "Are you sure to delete this user?"
+    "manageUser":{
+        "add":"Add a new user",
+        "email":"Email",
+        "password":"Password ",
+        "firstName":"First name",
+        "lastName":"Last name",
+        "phone":"Phone number",
+        "address":"Address",
+        "gender":"Gender ",
+        "male":"Male",
+        "female":"Female",
+        "other":"Other",
+        "position":"Position",
+        "role":"Role",
+        "image":"Avatar ",
+        "save":"Save",
+        "edit": "Update user"
+    },
+    "homepage":{
+        "out-standing-doctor": "Out-Standing Doctor",
+        "more-info":"More information",
+        "specialty-popular": "Popular Specialties ",
+        "outstanding-medical-facilities":"Outstanding Medical Facilities",
+        "handbook": "Handbook",
+        "login":"Login"
+
+    },
+    "manage-schedule":{
+        "title":"Manage Doctor's examination schedule",
+        "choose-date": "Choose the date",
+        "choose-doctor": "Choose the doctor",
+        "save": "Save",
+        "doctor": "Doctor",
+        "show-schedule": "Show schedule",
+        "date":"Date",
+        "time":"Time"
+    },
+    "patient":{
+        "detail-doctor":{
+            "schedule": "Schedule",
+            "no-schedule":"The doctor has not scheduled appointments for today. Please choose another date!",
+            "choose-book":"Choose and book (free) "
         },
-        "product-manage": {
-            "fail-to-load-foprtype": "Fail to load packages list",
-            "prid": "Package ID",
-            "prname": "Package name",
-            "prtype": "Package type",
-            "status": "Status",
-            "description": "Description",
-            "effective-date": "Effective date",
-            "expiration-date": "Expiration date",
-            "add-product": "Add package",
-            "add-product-success": "Add package successfully",
-            "add-product-fail": "Fail to add package",
-            "edit-product": "Edit package information",
-            "package-decentralize": "Package decentralize",
-            "edit-product-success": "Edit package information successfully",
-            "edit-product-fail": "Fail to edit package information",
-            "delete-product-success": "Delete package successfully",
-            "delete-product-fail": "Fail to delete package",
-            "invalid-input": {
-                "prid": "Please fill in package ID",
-                "prname": "Please fill in package name"
-            },
-            "fail-to-load-decentralize-info": "Fail to load decentralize info",
-            "save-decentralize-success": "Save decentralization successfully",
-            "save-decentralize-fail": "Fail to save decentralization",
-            "sure-delete-package": "Are you sure to delete this package?"
+        "extra-doctor-info":{
+            "text-address" : "ADDRESS OF CLINIC ",
+            "price":"Price:",
+            "detail": "See more",
+            "payment":"Patient can pay by:",
+            "hide-price":"Hide price list"
         },
-        "register-package-group-or-acc": {
-            "assign-service-package-to-customer": "Assign service package to customer",
-            "package-name": "Package name",
-            "assign-type": "Assign type",
-            "cust-acc-group": "Customer/account group",
-            "effective-date": "Effective date",
-            "expiration-date": "Expiration date",
-            "assign": "Assign",
-            "manage-assign-groups": "Manage assign groups",
-            "group-cust-acc-name": "Group/customer account name",
-            "del-assign": "Del assign",
-            "fail-to-load-manage-assign-groups-list": "Fail to load manage assign groups list",
-            "invalid-selected": {
-                "currentfoProduct": "Invalid package",
-                "currentAssignType": "Invalid assign type",
-                "currentFoUser": "Invalid customer/account group"
-            },
-            "assign-service-package-to-customer-success": "Assign service package to customer successfully",
-            "assign-service-package-to-customer-fail": "Fail to assign service package to customer",
-            "remove-assign-success": "Unassign service package to customer successfully",
-            "remove-assign-fail": "Fail to unassign service package to customer",
-            "sure-delete-assign": "Are you sure to unassign service package to customer?"
+        "booking-modal":{
+            "price": "Price: ",
+            "time": "Time: ",
+            "info-booking":"Information of patient booking",
+            "name":"name",
+            "phone":"Phone number",
+            "email":"Email",
+            "addr":"Address",
+            "gender":"Gender",
+            "birthday":"Date of birth",
+            "reason":"Reason for examination ",
+            "confirm":"Confirm",
+            "close":"Close"
         }
-    }
+    },
+    "admin":{
+        "manage-doctor":"Doctor's information",
+        "choose-doctor": "Choose the doctor",
+        "choose-clinic": "Choose the clinic",
+        "name-clinic": "Name of clinic",
+        "address-clinic": "Address of clinic",
+        "image": "Image",
+        "upload": "Upload image",
+        "introduction-info": "Introduction information:",
+        "save" : "Save",
+        "create":"Create",
+        "price": "Examination price",
+        "payment" : "Payment methods",
+        "specialty": "Specialty",
+        "clinic": "Clinic",
+        "province":"Province / City",
+        "nameClinic": "Clinic name",
+        "addClinic": "Clinic address ",
+        "note": "Note ",
+        "save": "Save",
+        "change": "Change",
+        "delete": "Delete",
+        "more-info-about-doctor":"More information about doctor",
+        "manage-clinic":"Manage clinic",
+        "info-clinic":"Information about Clinic",
+        "manage-specialty":"Specialty",
+        "name-specialty":"Name of specialty",
+        "choose-specialty":"Choose specialty",
+        "info-specialty":"Information about specialty",
+        "manage-handbook":"MANAGE HANDBOOK",
+        "title":"Title",
+        "author":"Author",
+        "article":"Article",
+        "number": "Order number",
+        "sex": "Sex",
+        "action": "Action",
+        "name": "Full name"
+
+        
+
+
+    }  
+
 }

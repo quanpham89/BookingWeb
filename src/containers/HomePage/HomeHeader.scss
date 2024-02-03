@@ -1,0 +1,235 @@
+:root{
+    --home-header-banner-height: 675px;
+}
+
+.home-header-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 60px;
+    width: 100%;
+    padding: 0 30px;
+    background: #fff;
+    .home-header-content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    .left-content{
+        display: flex;
+        width: 25%;
+        align-items: center;
+        i{
+            font-size: 25px;
+            color: grey;
+            cursor: pointer;
+        }
+        .header-logo{
+            margin-left: 60px;
+            width: 50%;
+            height: 100%;
+            background: url('../../assets/logo.svg') center center no-repeat;
+            cursor: pointer;
+        }
+    }
+    .center-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+        .child-content{
+            .sub-title{
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+    }
+    .right-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        font-weight: 600;
+        .support{
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            i{
+                font-size: 15px;
+                margin-right: 5px;
+            }
+        }
+        .language-vi{
+            cursor: pointer;
+            opacity: 0.3;
+            &.active{
+                opacity: 1 !important;
+                span{
+                    color: rgb(182, 6, 6);
+                }
+            }
+            &:hover{
+                opacity: 1;
+                transition: 0.1s linear;
+            }
+        }
+        .language-en{
+            margin: 0 10px;
+            cursor: pointer;
+            opacity: 0.3;
+
+            &.active{
+                opacity: 1 !important;
+                span{
+                    color: rgb(182, 6, 6);
+                }
+            }&:hover{
+                opacity: 1;
+                transition: 0.1s linear;
+            }
+        }
+        }
+    }
+}
+
+.home-header-banner{
+    height: var(--home-header-banner-height);
+    background: url('../../assets/header-background.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    .content-up{
+        background: linear-gradient(rgba(0, 0, 0, 0.25),rgba(255, 255, 255, 0.3));
+        height: calc(var(--home-header-banner-height) * 65 / 100);
+        .main-title-header,
+        .sub-title-header{
+            text-align: center;
+            font-size: 30px;
+            color: #fff;
+            margin-top: 65px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 1px #333;
+        }
+        
+        .sub-title-header{
+            margin-top: 15px;
+        }
+    
+        .search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            padding: 8px;
+            margin: 60px auto;
+            border-radius: 30px;
+            background: #f7d800;
+            i{
+                margin: 0 5px;
+            }
+            input{
+                margin: 0 10px;
+                height: 30px;
+                width: 100%;
+                border: none;
+                outline: none;
+                background: transparent;
+            }
+        }
+
+    }
+    
+    .content-down{
+        height: calc(var(--home-header-banner-height) * 35 / 100);
+        background: linear-gradient(rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 1));
+        
+        .option{
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            height: 90%;
+            .option-child{
+                width: 95px;
+                height: 95px;
+                &:hover{
+                    color: #49bce2;
+                    transition: 0.3s linear;
+                    cursor: pointer;
+                }
+                .icon-child{
+                    width: 80%;
+                    height: 80%;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    box-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+                }
+                
+                .icon-child.speciality{
+                    background: url('../../assets/hospital.png');
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-size: 40px;
+                    background-position: center;
+                }
+
+                .icon-child.remote{
+                    background: url('../../assets/remote.png');
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-size: 40px;
+                    background-position: center;
+                }
+                
+                .icon-child.checkAll{
+                    background: url('../../assets/checkAll.png');
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-size: 40px;
+                    background-position: center;
+                }
+                
+                .icon-child.test{
+                    background: url('../../assets/test.png');
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-size: 40px;
+                    background-position: center;
+                }
+                
+                .icon-child.mental{
+                    background: url('../../assets/mental.png');
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-size: 40px;
+                    background-position: center;
+                }
+                
+                .icon-child.teeth{
+                    background: url('../../assets/teeth.png');
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-size: 40px;
+                    background-position: center;
+                }
+                
+
+                .text-child{
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-align: center;
+                    cursor: pointer;
+                }
+
+            }
+        }
+
+    }
+
+}

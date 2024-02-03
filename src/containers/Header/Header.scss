@@ -1,8 +1,8 @@
 @import "../../styles/common.scss";
 
 .header-container {
-    z-index: 99;
     display: flex;
+    z-index: 99;
     justify-content: space-between;
     background-color: $colormain;
     color: $common-text-color;
@@ -19,5 +19,25 @@
         i {
             font-size: $base-size + 1px;
         }
+    }
+    .languages{
+        .welcome{
+            margin-right: 10px;
+        }
+        .language-en{
+            margin-right: 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            &.active{
+                color: rgb(238, 44, 44);
+            }
+        }
+        .language-vi{
+            cursor: pointer;
+            &.active{
+                color: rgb(238, 44, 44);
+            }
+        }
+
     }
 }
