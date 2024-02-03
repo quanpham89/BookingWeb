@@ -14,7 +14,6 @@ import Login from './Auth/Login';
 import System from '../routes/System';
 import Doctor from '../routes/Doctor';
 import DetailSpecialty from'./Patient/Specialty/DetailSpecialty'
-import { CustomToastCloseButton } from '../components/CustomToast';
 import verifyEmailBooking from '../containers/Patient/verifyEmailBooking'
 import DetailClinic from './Patient/Clinic/DetailClinic'
 import DeDetailHandbook from './Patient/Handbook/DetailHandbook'

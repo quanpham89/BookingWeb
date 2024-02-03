@@ -118,13 +118,13 @@ class ManageSchedule extends Component {
         if(rangeTime && rangeTime.length> 0){
             let selectedTime = rangeTime.filter(item => item.isSelected)
             if(selectedTime && selectedTime.length>0){
-                selectedTime.map(schedule =>{
+                result = selectedTime.map(schedule =>{
                     let obj = {}
                     obj.doctorId = selectedDoctor.value;
                     obj.date = formattedDate;
                     obj.timeType = schedule.keyMap;
                     obj.dateStyle =  ''+formattedDate
-                    result.push(obj)
+                    return obj
                 })
             }else{
                 toast.error('Invalid selected Time !')

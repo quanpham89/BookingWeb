@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {  Modal, ModalBody, ModalFooter, ModalHeader, Button } from 'reactstrap';
 import './RemedyModal.scss'
-import _ from 'lodash'
 
 import CommonUtils from '../../../utils/CommonUtils';
 

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import * as actions from '../../../store/actions'
 
 import  './TableManageUser.scss';
-import MarkdownIt from 'markdown-it';
 // import style manually
 import 'react-markdown-editor-lite/lib/index.css';
 
