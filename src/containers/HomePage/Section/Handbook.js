@@ -5,6 +5,8 @@ import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import './Handbook.scss'
+
 
 
 import { withRouter } from 'react-router-dom';
@@ -37,7 +39,7 @@ class Handbook extends Component {
                 <div className='section-container'>
                     <div className='section-header'>
                         <span className='title-section'><FormattedMessage id="homepage.handbook"/></span>
-                        <button className='btn-section'><FormattedMessage id="homepage.more-info"/></button>
+                        {/* <button className='btn-section'><FormattedMessage id="homepage.more-info"/></button> */}
                     </div>
                     <div className='section-body'>
                         <Slider{...this.props.settings}>

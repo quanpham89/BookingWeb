@@ -10,10 +10,14 @@
     .add-new-specialty{
         .preview-img-container{
             .preview-img{
-                width: 40%;
+                width: 60%;
                 cursor: no-drop;
+                margin: 10px auto ;
+                background:  center center no-repeat;
+                background-size: 25%;
+
             }
-        }
+        }   
         .btn-save-specialty{
             float: right;
         }

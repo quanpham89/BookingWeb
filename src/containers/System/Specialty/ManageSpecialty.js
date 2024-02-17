@@ -20,7 +20,7 @@ class ManageSpecialty extends Component {
             name: '',
             descriptionHTML: '',
             descriptionMarkdown: '',
-            imgBase64: '',
+            // imgBase64: '',
             previewImg: '',
             action: 'CREATE',
             selectedSpecialty:{},
@@ -28,7 +28,8 @@ class ManageSpecialty extends Component {
             isChange: false,
             isDelete: false,
             specialtyId:'',
-            preImg:''
+            // preImg:'',
+            urlImage: ""
         }
     }
     componentDidMount (){
@@ -71,9 +72,10 @@ class ManageSpecialty extends Component {
             name: this.state.name,
             descriptionHTML: this.state.descriptionHTML,
             descriptionMarkdown: this.state.descriptionMarkdown,
-            imgBase64: this.state.imgBase64 ? this.state.imgBase64 : this.state.preImg,
+            // imgBase64: this.state.imgBase64 ? this.state.imgBase64 : this.state.preImg,
             action: this.state.isChange ? "UPDATE" :"CREATE",
             specialtyId: this.state.specialtyId.id,
+            urlImage: this.state.urlImage
         })
         if(res && res.errCode === 0){
             toast.success(' Success')
@@ -82,9 +84,10 @@ class ManageSpecialty extends Component {
                 address: '',
                 descriptionHTML: '',
                 descriptionMarkdown: '',
-                imgBase64: '',
+                // imgBase64: '',
                 previewImg: '',
-                isChange: false
+                isChange: false,
+                urlImage:""
             })
         }else{
             toast.error('Something went wrong, please try again')
@@ -104,7 +107,7 @@ class ManageSpecialty extends Component {
                 address: res.data.address,
                 descriptionHTML: res.data.descriptionHTML,
                 descriptionMarkdown: res.data.descriptionMarkdown,
-                previewImg: res.data.image,
+                urlImage: res.data.image,
                 specialtyId: selectedSpecialtyId
             })
         }else {
@@ -113,7 +116,7 @@ class ManageSpecialty extends Component {
                 address: "",
                 descriptionHTML: "",
                 descriptionMarkdown: "",
-                previewImg: "",
+                // previewImg: "",
             })
         }
     };
@@ -164,8 +167,9 @@ class ManageSpecialty extends Component {
                     name: '',
                     descriptionHTML: '',
                     descriptionMarkdown: '',
-                    imgBase64: '',
-                    previewImg: '',
+                    // imgBase64: '',
+                    // previewImg: '',
+                    urlImage: '',
                     action: 'CREATE',
                     selectedSpecialty:{},
                     listSpecialty:[],
@@ -193,15 +197,22 @@ class ManageSpecialty extends Component {
                     
                     <div className='preview-img-container col-6 form-group'>
                         <div><FormattedMessage id="admin.image"/></div>
-                        <input 
+                        {/* <input 
                         id='preview-img' 
                         className='form-control' 
                         type='file' 
                         hidden
                         onChange={(e)=>this.handleOnChangeImage(e)}
+                        /> */}
+                        {/* <label htmlFor='preview-img' className='label-upload'><FormattedMessage id="admin.upload"/> <i className="fas fa-upload"></i></label> */}
+                        <input 
+                        id='preview-img' 
+                        className='form-control' 
+                        type='text' 
+                        value = {this.state.urlImage}
+                        onChange={(e)=>this.handleOnchangeInput(e, "urlImage")}
                         />
-                        <label htmlFor='preview-img' className='label-upload'><FormattedMessage id="admin.upload"/> <i className="fas fa-upload"></i></label>
-                        <div className='preview-img'style={{backgroundImage: `url(${this.state.previewImg})` }} ></div>
+                        <div className='preview-img'style={{backgroundImage: `url(${this.state.urlImage})` }} ></div>
                     </div>
                     <div className='col-12'>
                         <label><FormattedMessage id="admin.info-specialty"/> </label>
@@ -224,7 +235,7 @@ class ManageSpecialty extends Component {
                         />
                     </div>
                     
-                    <div className='preview-img-container col-6 form-group'>
+                    {/* <div className='preview-img-container col-6 form-group'>
                         <div><FormattedMessage id="admin.image"/></div>
                         <input 
                         id='preview-img' 
@@ -235,6 +246,25 @@ class ManageSpecialty extends Component {
                         />
                         <label htmlFor='preview-img' className='label-upload'><FormattedMessage id="admin.upload"/> <i className="fas fa-upload"></i></label>
                         <div className='preview-img'style={{backgroundImage: `url(${this.state.previewImg})` }} ></div>
+                    </div> */}
+                    <div className='preview-img-container col-6 form-group'>
+                        <div><FormattedMessage id="admin.image"/></div>
+                        {/* <input 
+                        id='preview-img' 
+                        className='form-control' 
+                        type='file' 
+                        hidden
+                        onChange={(e)=>this.handleOnChangeImage(e)}
+                        /> */}
+                        {/* <label htmlFor='preview-img' className='label-upload'><FormattedMessage id="admin.upload"/> <i className="fas fa-upload"></i></label> */}
+                        <input 
+                        id='preview-img' 
+                        className='form-control' 
+                        type='text' 
+                        value = {this.state.urlImage}
+                        onChange={(e)=>this.handleOnchangeInput(e, "urlImage")}
+                        />
+                        <div className='preview-img'style={{backgroundImage: `url(${this.state.urlImage})` }} ></div>
                     </div>
                     <div className='col-12'>
                         <MdEditor 

@@ -132,7 +132,7 @@
         "choose-clinic": "Choose the clinic",
         "name-clinic": "Name of clinic",
         "address-clinic": "Address of clinic",
-        "image": "Image",
+        "image": "Link image",
         "upload": "Upload image",
         "introduction-info": "Introduction information:",
         "save" : "Save",
@@ -162,7 +162,12 @@
         "number": "Order number",
         "sex": "Sex",
         "action": "Action",
-        "name": "Full name"
+        "name": "Full name",
+        "corrector":"Corrector",
+        "publication":"Publication",
+        "update":"Update",
+        "intro-handbook-1": "Helps family members and relatives book health care services for the elderly, sick at home, and in hospitals swiftly and easily.",
+        "intro-handbook-2": "Vietnam's leading comprehensive healthcare portal connects users to over 100 respected hospitals and clinics, more than 500 outstanding specialists, and thousands of high-quality medical services and goods."
 
         
 

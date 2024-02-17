@@ -1,3 +1,11 @@
+.container{
+    .row{
+        .col-3,
+        .col-9{
+            margin-top: 10px;
+        }
+    }
+}
 .preview-img-container{
     .label-upload{
         padding: 5px;
@@ -9,11 +17,12 @@
         }
     }
     .preview-img{
+        margin-top: 5px;
         height: 100px;
         width: 100%;
         border: 1px solid #ddd;
         background:  center center no-repeat;
-        background-size: 95px;
+        background-size: 60%;
         cursor: pointer;
     }
 

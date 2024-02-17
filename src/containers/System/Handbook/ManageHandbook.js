@@ -18,8 +18,9 @@ class ManageHandbook extends Component {
             author:'',
             descriptionHTML: '',
             descriptionMarkdown: '',
-            imgBase64: '',
-            previewImg: '',
+            // imgBase64: '',
+            // previewImg: '',
+            urlImage: '',
             action: 'CREATE'
         }
     }
@@ -46,17 +47,17 @@ class ManageHandbook extends Component {
             descriptionMarkdown: text,
         })
     }
-    handleOnChangeImage = async(e)=>{
-        let data = e.target.files[0]
-        if(data){
-            let base64 = await CommonUtils.getBase64(data);
-            let file = URL.createObjectURL(data)
-            this.setState({
-                previewImg: file,
-                imgBase64: base64
-            })
-        }
-    }
+    // handleOnChangeImage = async(e)=>{
+    //     let data = e.target.files[0]
+    //     if(data){
+    //         let base64 = await CommonUtils.getBase64(data);
+    //         let file = URL.createObjectURL(data)
+    //         this.setState({
+    //             previewImg: file,
+    //             imgBase64: base64
+    //         })
+    //     }
+    // }
 
     handleSaveHandbook =async()=>{
         console.log(this.state)
@@ -64,12 +65,15 @@ class ManageHandbook extends Component {
         if(res && res.errCode === 0){
             toast.success('Create success')
             this.setState({
+                title: "",
                 name: '',
                 address: '',
+                author: '',
                 descriptionHTML: '',
                 descriptionMarkdown: '',
-                imgBase64: '',
-                previewImg: '',
+                // imgBase64: '',
+                // previewImg: '',
+                urlImage: " "
             })
         }else{
             toast.error('Something went wrong, please try again')
@@ -86,12 +90,9 @@ class ManageHandbook extends Component {
                     <FormattedMessage id="admin.title"/>
                         <input type='text' className='form-control' value={this.state.title} onChange={(e)=>this.handleOnchangeInput(e,'title')}/>
                     </div>
-                    <div className='col-6 form-group'>
-                        <label><FormattedMessage id="admin.author"/></label>
-                        <input type='text' className='form-control' value={this.state.author} onChange={(e)=>this.handleOnchangeInput(e,'author')}/>
-                    </div>
                     
-                    <div className='preview-img-container col-6 form-group'>
+                    
+                    {/* <div className='preview-img-container col-6 form-group'>
                         <div><FormattedMessage id="admin.image"/></div>
                         <input 
                         id='preview-img' 
@@ -102,8 +103,22 @@ class ManageHandbook extends Component {
                         />
                         <label htmlFor='preview-img' className='label-upload'><FormattedMessage id="admin.upload"/><i className="fas fa-upload"></i></label>
                         <div className='preview-img'style={{backgroundImage: `url(${this.state.previewImg})` }} ></div>
+                    </div> */}
+                    <div className='preview-img-container col-6 form-group'>
+                        <div><FormattedMessage id="admin.image"/></div>
+                        <input 
+                        id='preview-img' 
+                        className='form-control' 
+                        type='text' 
+                        value = {this.state.urlImage}
+                        onChange={(e)=>this.handleOnchangeInput(e, "urlImage")}
+                        />
+                        <div className='preview-img'style={{backgroundImage: `url(${this.state.urlImage})` }}></div>
                     </div>
-                    
+                    <div className='col-6 form-group'>
+                        <label><FormattedMessage id="admin.author"/></label>
+                        <input type='text' className='form-control' value={this.state.author} onChange={(e)=>this.handleOnchangeInput(e,'author')}/>
+                    </div>
                     <div className='col-12'>
                         <label><FormattedMessage id="admin.article"/></label>
                         <MdEditor 

@@ -21,6 +21,13 @@
             .label-upload{
                 margin: 10px 0;
             }
+            .preview-img{
+                width: 60%;
+                cursor: no-drop;
+                margin: 10px auto ;
+                background:  center center no-repeat;
+                background-size: 25%;
+            }
         }
     }
 }

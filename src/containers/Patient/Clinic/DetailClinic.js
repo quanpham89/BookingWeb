@@ -22,7 +22,6 @@ class DetailClinic extends Component {
             let response = await getDetailClinic({
                 id: this.props.match.params.id,
             })
-            console.log(response)
             if(response && response.errCode === 0 ){
                 let data = response.data;
                 let arrDoctorId = []
@@ -62,7 +61,7 @@ class DetailClinic extends Component {
 
 
                             <>
-                                <div className=''>{dataClinic.name}</div>
+                                <h3 className=''><strong>{dataClinic.name}</strong></h3>
                                 <div contentEditable='false' dangerouslySetInnerHTML={{ __html: dataClinic.descriptionHTML}}></div>
     
                             </>

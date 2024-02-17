@@ -39,25 +39,24 @@ class OutStandingDoctor extends Component {
     render() {
         let allDoctors = this.state.arrDoctors
         let {language} = this.props
-        console.log(this.props)
         return ( 
             <div className='section-share section-outstanding-doctor'>
             <div className='section-container'>
                 <div className='section-header'>
                     <span className='title-section'><FormattedMessage id = 'homepage.out-standing-doctor'/></span>
-                    <button className='btn-section'><FormattedMessage id = 'homepage.more-info'/></button>
+                    {/* <button className='btn-section'><FormattedMessage id = 'homepage.more-info'/></button> */}
                 </div>
                 <div className='section-body'>
                     <Slider {...this.props.settings}>
                         
                         {allDoctors && allDoctors.length>0 &&
-                        allDoctors.map((item, index)=>{
-                            let imgBase64 = ''
-                            if(item.image){
-                                if(item.image){
-                                    imgBase64 = new Buffer(item.image,'base64').toString('binary')
-                                }
-                            }
+                        allDoctors.map((item)=>{
+                            // let imgBase64 = ''
+                            // if(item.image){
+                            //     if(item.image){
+                            //         imgBase64 = new Buffer(item.image,'base64').toString('binary')
+                            //     }
+                            // }
                             let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName} ` 
                             let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}` 
 
@@ -65,7 +64,7 @@ class OutStandingDoctor extends Component {
                                 <div className='section-customize' onClick={()=> this.handleViewDetailDoctor(item)}>
                                     <div className='custom-border'>
                                         <div className='outer-background'>
-                                            <div className='bg-img img-outstanding-doctor' style={{backgroundImage: `url(${imgBase64})` }}></div>
+                                            <div className='bg-img img-outstanding-doctor' style={{backgroundImage: `url(${item.image})` }}></div>
                                         </div>
                                         <div className='position text-center'>
                                             <div >{language === LANGUAGES.VI ? nameVi : nameEn}</div >

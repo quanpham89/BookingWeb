@@ -32,7 +32,8 @@ class UserRedux extends Component {
 
             action: '',
 
-            userEditId:''
+            userEditId:'',
+            urlImage: ""
         }
     }
     
@@ -95,7 +96,8 @@ class UserRedux extends Component {
                 avatar: '',
                 action: CRUD_ACTIONS.CREATE,
                 userEditId: '',
-                previewImg:''
+                previewImg:'',
+                urlImage: ""
             })
         }
     }
@@ -103,7 +105,6 @@ class UserRedux extends Component {
         let data = e.target.files[0]
         if(data){
             let base64 = await CommonUtils.getBase64(data);
-            console.log(base64)
             let file = URL.createObjectURL(data)
             this.setState({
                 previewImg: file,
@@ -112,9 +113,12 @@ class UserRedux extends Component {
         }
     }
     OpenPreviewImage = () =>{
+        console.log(this.state)
         if(this.state.previewImg){
             this.setState({
-                isOpen: true
+                // isOpen: true,
+                isOpen: false,
+
             })
         }else{
             return
@@ -137,7 +141,8 @@ class UserRedux extends Component {
                 gender: this.state.gender,
                 role: this.state.role,
                 position: this.state.position,
-                avatar: this.state.avatar
+                avatar: this.state.avatar,
+                urlImage: this.state.urlImage,
             })
         }else{
             // fire redux edit user
@@ -153,6 +158,7 @@ class UserRedux extends Component {
                 role: this.state.role,
                 position: this.state.position,
                 avatar: this.state.avatar,
+                urlImage: this.state.urlImage
             })
         }
     }
@@ -187,10 +193,10 @@ class UserRedux extends Component {
     }
 
     handleEditUserFromParent = (user)=>{
-        let imgBase64 = ''
-        if(user.image){
-            imgBase64 = new Buffer(user.image,'base64').toString('binary')
-        }
+        // let imgBase64 = ''
+        // if(user.image){
+        //     imgBase64 = new Buffer(user.image,'base64').toString('binary')
+        // }
 
         this.setState({
             email: user.email,
@@ -204,7 +210,7 @@ class UserRedux extends Component {
             position: user.positionId,
             action: CRUD_ACTIONS.EDIT,
             userEditId: user.id,
-            previewImg: imgBase64 
+            urlImage: user.image
         })
     }
     
@@ -292,12 +298,11 @@ class UserRedux extends Component {
                                     <input 
                                     id='preview-img' 
                                     className='form-control' 
-                                    type='file' 
-                                    hidden
-                                    onChange={(e)=>this.handleOnChangeImage(e)}
+                                    type='text' 
+                                    value= {this.state.urlImage} 
+                                    onChange={(e)=>this.onChangeInput(e, "urlImage")}
                                     />
-                                    <label htmlFor='preview-img' className='label-upload'>Tải ảnh <i className="fas fa-upload"></i></label>
-                                    <div className='preview-img'style={{backgroundImage: `url(${this.state.previewImg})` }} onClick={()=> this.OpenPreviewImage()}></div>
+                                    <div className='preview-img'style={{backgroundImage: `url(${this.state.urlImage})` }} onClick={()=> this.OpenPreviewImage()}></div>
                                 </div>
                             </div>
                             <div className='col-12 mt-3'>
@@ -317,12 +322,6 @@ class UserRedux extends Component {
                         </div>
                     </div>
                 </div>
-                {/* {this.state.isOpen === true &&  
-                    <Lightbox 
-                    mainSrc={this.state.previewImg}
-                    onCloseRequest={()=> this.setState({isOpen: false})}
-                    />
-                } */}
             </div>
         )
     }

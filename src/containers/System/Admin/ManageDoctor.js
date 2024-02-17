@@ -22,6 +22,7 @@ class ManageDoctor extends Component {
             description:  '',
             listDoctors: [],
             hasOldData: false,
+            doctorId:"",
 
             // doctor-info database.allRequiredDoctorInfo
             listPrice:[],
@@ -194,6 +195,7 @@ class ManageDoctor extends Component {
     handleChangeSelect = async(selectedDoctor) => {
         this.setState({ 
             selectedDoctor,
+            doctorId: selectedDoctor.value,
         })
         let res = await getDetailInfoDoctors(selectedDoctor.value)
         let {listPayment, listProvince, listPrice, listSpecialty, listClinic, selectedClinic,  selectedPayment, selectedProvince, selectedPrice} = this.state
@@ -266,9 +268,7 @@ class ManageDoctor extends Component {
     handleChangeSelectDoctorInfo = async(selectedOption, name) => {
         let stateName = name.name
         let copySate = {...this.state}
-        copySate[stateName] = selectedOption
-        console.log(selectedOption)
-        
+        copySate[stateName] = selectedOption        
         this.setState({
             ...copySate
         })

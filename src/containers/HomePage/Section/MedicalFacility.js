@@ -35,7 +35,7 @@ class MedicalFacility extends Component {
             <div className='section-container'>
                 <div className='section-header'>
                     <span className='title-section'><FormattedMessage id="homepage.outstanding-medical-facilities"/></span>
-                    <button className='btn-section'><FormattedMessage id="homepage.more-info"/></button>
+                    {/* <button className='btn-section'><FormattedMessage id="homepage.more-info"/></button> */}
                 </div>
                 <div className='section-body'>
                     <Slider{...this.props.settings}>

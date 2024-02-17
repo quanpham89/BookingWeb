@@ -5,7 +5,7 @@ import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css';
 import './ManageClinic.scss'
-import CommonUtils from '../../../utils/CommonUtils';
+// import CommonUtils from '../../../utils/CommonUtils';
 import { LANGUAGES } from '../../../utils/constant';
 import {handleClinic, getAllClinic, getDetailClinic, deleteClinic} from '../../../services/userService'
 import {toast} from 'react-toastify'
@@ -21,14 +21,15 @@ class ManageClinic extends Component {
             address:'',
             descriptionHTML: '',
             descriptionMarkdown: '',
-            imgBase64: '',
+            // imgBase64: '',
             previewImg: '',
             action: 'CREATE',
             listClinic: [],
             selectedClinic: {},
             isChange: false,
             clinicId: '',
-            isDelete: false
+            isDelete: false,
+            urlImage: '',
         }
     }
     componentDidMount (){
@@ -52,17 +53,17 @@ class ManageClinic extends Component {
             descriptionMarkdown: text,
         })
     }
-    handleOnChangeImage = async(e)=>{
-        let data = e.target.files[0]
-        if(data){
-            let base64 = await CommonUtils.getBase64(data);
-            let file = URL.createObjectURL(data)
-            this.setState({
-                previewImg: file,
-                imgBase64: base64
-            })
-        }
-    }
+    // handleOnChangeImage = async(e)=>{
+    //     let data = e.target.files[0]
+    //     if(data){
+    //         let base64 = await CommonUtils.getBase64(data);
+    //         let file = URL.createObjectURL(data)
+    //         this.setState({
+    //             previewImg: file,
+    //             imgBase64: base64
+    //         })
+    //     }
+    // }
     buildDataInput = (inputData, type)=>{
         let result = [];
         let language = this.props.language;
@@ -89,9 +90,10 @@ class ManageClinic extends Component {
             address: this.state.address,
             descriptionHTML: this.state.descriptionHTML,
             descriptionMarkdown: this.state.descriptionMarkdown,
-            imgBase64: this.state.imgBase64,
+            // imgBase64: this.state.imgBase64,
             action: this.state.isChange ? "UPDATE" : "CREATE",
-            clinicId: this.state.clinicId
+            clinicId: this.state.clinicId,
+            urlImage: this.state.urlImage
 
         })
         if(res && res.errCode === 0){
@@ -101,9 +103,10 @@ class ManageClinic extends Component {
                 address: '',
                 descriptionHTML: '',
                 descriptionMarkdown: '',
-                imgBase64: '',
+                // imgBase64: '',
                 previewImg: '',
-                isChange: false
+                isChange: false,
+                urlImage: ''
             })
         }else{
             toast.error('Something went wrong, please try again')
@@ -123,8 +126,8 @@ class ManageClinic extends Component {
                 address: res.data.address,
                 descriptionHTML: res.data.descriptionHTML,
                 descriptionMarkdown: res.data.descriptionMarkdown,
-                previewImg: res.data.image,
-                clinicId: selectedClinicId.id
+                clinicId: selectedClinicId.id,
+                urlImage: res.data.image
             })
         }else {
             this.setState({ 
@@ -133,6 +136,7 @@ class ManageClinic extends Component {
                 descriptionHTML: "",
                 descriptionMarkdown: "",
                 previewImg: "",
+                urlImage: ""
             })
         }
     };
@@ -144,6 +148,7 @@ class ManageClinic extends Component {
             descriptionHTML: '',
             descriptionMarkdown: '',
             previewImg: '',
+            urlImage: ""
         })
         let res = await getAllClinic()
         if(res && res.errCode === 0){
@@ -167,9 +172,9 @@ class ManageClinic extends Component {
                         address: '',
                         descriptionHTML: '',
                         descriptionMarkdown: '',
-                        imgBase64: '',
                         previewImg: '',
-                        isChange: false
+                        isChange: false,
+                        urlImage: '',
                     })
                 }else{
                     toast.error("Please try against")
@@ -194,16 +199,26 @@ class ManageClinic extends Component {
                     
                     <div className='preview-img-container col-6 form-group'>
                         <div><FormattedMessage id="admin.image"/></div>
-                        <input 
+                        {/* <input 
                         id='preview-img' 
                         className='form-control' 
                         type='file' 
                         hidden
                         onChange={(e)=>this.handleOnChangeImage(e)}
                         />
-                        <label htmlFor='preview-img' className='label-upload'><FormattedMessage id="admin.upload"/> <i className="fas fa-upload"></i></label>
-                        <div className='preview-img'style={{backgroundImage: `url(${this.state.previewImg})` }} ></div>
+                        <label htm
+                        lFor='preview-img' className='label-upload'><FormattedMessage id="admin.upload"/> <i className="fas fa-upload"></i></label>
+                        <div className='preview-img'style={{backgroundImage: `url(${this.state.previewImg})` }} ></div> */}
+                        <input 
+                        id='preview-img' 
+                        className='form-control' 
+                        type='text' 
+                        value = {this.state.urlImage}
+                        onChange={(e)=>this.handleOnchangeInput(e, "urlImage")}
+                        />
+                        <div className='preview-img'style={{backgroundImage: `url(${this.state.urlImage})` }}></div>
                     </div>
+                    
                     <div className='col-6 form-group'>
                         <label><FormattedMessage id="admin.address-clinic"/></label>
                         <input type='text' className='form-control' value={this.state.address} onChange={(e)=>this.handleOnchangeInput(e,'address')}/>
@@ -230,17 +245,26 @@ class ManageClinic extends Component {
                 </div>
                 
                 <div className='preview-img-container col-6 form-group'>
-                    <div><FormattedMessage id="admin.image"/></div>
-                    <input 
-                    id='preview-img' 
-                    className='form-control' 
-                    type='file' 
-                    hidden
-                    onChange={(e)=>this.handleOnChangeImage(e)}
-                    />
-                    <label htmlFor='preview-img' className='label-upload'><FormattedMessage id="admin.upload"/> <i className="fas fa-upload"></i></label>
-                    <div className='preview-img'style={{backgroundImage: `url(${this.state.previewImg})` }} ></div>
-                </div>
+                        <div><FormattedMessage id="admin.image"/></div>
+                        {/* <input 
+                        id='preview-img' 
+                        className='form-control' 
+                        type='file' 
+                        hidden
+                        onChange={(e)=>this.handleOnChangeImage(e)}
+                        />
+                        <label htm
+                        lFor='preview-img' className='label-upload'><FormattedMessage id="admin.upload"/> <i className="fas fa-upload"></i></label>
+                        <div className='preview-img'style={{backgroundImage: `url(${this.state.previewImg})` }} ></div> */}
+                        <input 
+                        id='preview-img' 
+                        className='form-control' 
+                        type='text' 
+                        value = {this.state.urlImage}
+                        onChange={(e)=>this.handleOnchangeInput(e, "urlImage")}
+                        />
+                        <div className='preview-img'  style={{backgroundImage: `url(${this.state.urlImage})` }}></div>
+                    </div>
                 <div className='col-6 form-group'>
                     <label><FormattedMessage id="admin.address-clinic"/></label>
                     <input type='text' className='form-control' value={this.state.address} onChange={(e)=>this.handleOnchangeInput(e,'address')}/>

@@ -71,20 +71,20 @@
         "lastName":"Họ",
         "phone":"Số điện thoại",
         "address":"Địa chỉ",
-        "gender":"Gới tính",
+        "gender":"Giới tính",
         "male":"Nam",
         "female":"Nữ",
         "other":"Khác",
         "position":"Vị trí",
         "role":"Vai trò",
-        "image":"Ảnh dại diện",
+        "image":"Ảnh đại diện",
         "save":"Lưu",
         "edit": "Cập nhập thay đổi"
     },
     "homepage":{
         "out-standing-doctor": "Bác sĩ nổi bật",
         "more-info":"Xem thêm",
-        "specialty-popular": "Chuyên khao phổ biến",
+        "specialty-popular": "Chuyên khoa phổ biến",
         "outstanding-medical-facilities":"Cơ sở y tế nổi bật",
         "handbook": "Cẩm nang",
         "login":"Đăng nhập"
@@ -134,7 +134,7 @@
         "choose-doctor": "Chọn bác sĩ",
         "choose-clinic": "Chọn phòng khám",
         "name-clinic": "Tên phòng khám",
-        "image": "Ảnh",
+        "image": "Link ảnh",
         "upload": "Tải lên",
         "address-clinic": "Địa chỉ phòng khám",
         "introduction-info": "Thông tin giới thiệu:",
@@ -164,7 +164,14 @@
         "number": "Số thứ tự",
         "sex": "Giới tính",
         "action": "Thao tác",
-        "name": "Họ và tên"
+        "name": "Họ và tên",
+        "corrector":"Người kiểm duyệt",
+        "publication":"Xuất bản",
+        "update":"Cập nhập lần cuối",
+        "intro-handbook-1": "Giúp người nhà, người thân có thể đặt dịch vụ Chăm sóc sức khỏe dành cho người cao tuổi, bệnh nhân tại nhà và bệnh viện nhanh chóng, thuận tiện.",
+        "intro-handbook-2": "Nền tảng Y tế chăm sóc sức khỏe toàn diện hàng đầu Việt Nam kết nối người dùng với trên 100 bệnh viện - phòng khám uy tín, hơn 500 bác sĩ chuyên khoa giỏi và hàng nghìn dịch vụ, sản phẩm y tế chất lượng cao."
+
+
 
 
 

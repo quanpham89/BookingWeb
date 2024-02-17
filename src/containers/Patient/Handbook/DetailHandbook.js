@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import moment from 'moment'
 import HomeHeader from '../../HomePage/HomeHeader' 
 import {getDetailHandbookById} from '../../../services/userService'
+import { FormattedMessage } from 'react-intl';
 import './DetailHandbook.scss' 
 
 class DetailHandbook extends Component {
@@ -43,34 +44,27 @@ class DetailHandbook extends Component {
                 <HomeHeader/>
                 <div className='detail-handbook-body'>
                     <div className='content-left'>
-                        <div className='detail-handbook-title'>{detailHandbook ? detailHandbook.title: ""}</div>
+                        <div className='detail-handbook-title'><h3><strong>{detailHandbook ? detailHandbook.title: ""}</strong></h3></div>
                         <div className='detail-handbook-moreInfo'>
-                            <div className='product-of change '>
-                                Sản phẩm của 
-                                <span> BookingCare</span>
+                            
+                            <div className='author change'><strong><FormattedMessage id='admin.author'/>:</strong>
+                                <span>{detailHandbook ? " " + detailHandbook.author: ""}</span>
                             </div>
-                            <div className='author change'>Tác giả: 
-                                <span>{detailHandbook ? detailHandbook.author: ""}</span>
+                            <div className='censor change'><strong><FormattedMessage id='admin.corrector'/>: </strong>
+                                <span>Con Vịt Vui Vẻ</span>
                             </div>
-                            <div className='censor change'>Người kiểm duyệt: 
-                                <span> Thảo Hoàng</span>
-                            </div>
-                            <div className='date'>Xuất bản: 
+                            <div className='date'><strong><FormattedMessage id='admin.publication'/>: </strong>
                                 <span>{createDate}</span>
                             </div>
-                            <div className='update'>Cập nhập lần cuối: 
+                            <div className='update'><strong><FormattedMessage id='admin.update'/>: </strong>
                                 <span> {updateDate}</span>
                             </div>
                         </div>
                         <div className='detail-handbook-intro'>
-                            <p>
-                            BookingCare hợp tác cùng WeCare247 giúp người nhà, người thân có thể đặt dịch vụ Chăm sóc sức khỏe dành cho người cao tuổi, bệnh nhân tại nhà và bệnh viện nhanh chóng, thuận tiện.
-                            </p>
+                            <p><FormattedMessage id='admin.intro-handbook-1'/></p>
                             <div className='detail-handbook-intro-box'>
-                                <div className='detail-handbook-intro-img'>
-
-                                </div>
-                                <div className='detail-handbook-intro-text'>BookingCare là Nền tảng Y tế chăm sóc sức khỏe toàn diện hàng đầu Việt Nam kết nối người dùng với trên 200 bệnh viện - phòng khám uy tín, hơn 1,500 bác sĩ chuyên khoa giỏi và hàng nghìn dịch vụ, sản phẩm y tế chất lượng cao.</div>
+                                <div className='detail-handbook-intro-img'></div>
+                                <div className='detail-handbook-intro-text'><p><FormattedMessage id='admin.intro-handbook-2'/></p></div>
                             </div>
                         </div>
                         <div className='detail-handbook-content'>
