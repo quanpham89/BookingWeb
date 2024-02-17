@@ -5,7 +5,6 @@ import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css';
 import './ManageHandbook.scss'
-import CommonUtils from '../../../utils/CommonUtils';
 import {toast} from 'react-toastify'
 import {handleHandbook} from '../../../services/userService'
 const mdParser = new MarkdownIt(/* Markdown-it options */);
