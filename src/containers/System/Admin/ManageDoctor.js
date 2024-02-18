@@ -197,21 +197,23 @@ class ManageDoctor extends Component {
             selectedDoctor,
             doctorId: selectedDoctor.value,
         })
+        
         let res = await getDetailInfoDoctors(selectedDoctor.value)
+        
         let {listPayment, listProvince, listPrice, listSpecialty, listClinic, selectedClinic,  selectedPayment, selectedProvince, selectedPrice} = this.state
         if(res && res.errCode === 0 && res.data && typeof res.data.Markdown.contentMarkdown === 'string' ){
             let markdown = res.data.Markdown
             let addClinic = '', nameClinic = '', note = '', paymentId = '', clinicId = '',
                 priceId = '', provinceId = '', selectedSpecialty = '', specialtyId = '';
-            if(res.data.Doctor_Info){
-                addClinic = res.data.Doctor_Info.addressClinic
-                nameClinic = res.data.Doctor_Info.nameClinic
-                note = res.data.Doctor_Info.note
-                paymentId = res.data.Doctor_Info.paymentId
-                priceId = res.data.Doctor_Info.priceId
-                provinceId = res.data.Doctor_Info.provinceId
-                specialtyId = res.data.Doctor_Info.specialtyId
-                clinicId = res.data.Doctor_Info.clinicId
+            if(res.data.DoctorInfo){
+                addClinic = res.data.DoctorInfo.addressClinic
+                nameClinic = res.data.DoctorInfo.nameClinic
+                note = res.data.DoctorInfo.note
+                paymentId = res.data.DoctorInfo.paymentId
+                priceId = res.data.DoctorInfo.priceId
+                provinceId = res.data.DoctorInfo.provinceId
+                specialtyId = res.data.DoctorInfo.specialtyId
+                clinicId = res.data.DoctorInfo.clinicId
                 selectedPayment = listPayment.find(item=>{
                     return item && item.value === paymentId
                 })
@@ -283,7 +285,6 @@ class ManageDoctor extends Component {
             })
 
         }
-
     }
 
     handleOnchangeOnText = (e, type)=>{

@@ -50,6 +50,7 @@ class ProfileDoctor extends Component {
     }
     render() {
         let { dataProfile} = this.state
+        console.log(this.props)
         let {language, isShowDoctorDes, dataTime, isShowLinkDetail, isShowPrice, doctorId}= this.props
         let nameVi, nameEn = ''
         if(dataProfile && dataProfile.positionData){
@@ -92,13 +93,13 @@ class ProfileDoctor extends Component {
                     <div className='price'>
                         <FormattedMessage id="patient.booking-modal.price"/>
                         <span>
-                            {dataProfile && dataProfile.Doctor_Info && language === LANGUAGES.VI &&
-                            <NumericFormat displayType="text" className='currency' value={dataProfile.Doctor_Info.priceTypeData.valueVi}  thousandSeparator="," suffix={'VND'} />
+                            {dataProfile && dataProfile.DoctorInfo && language === LANGUAGES.VI &&
+                            <NumericFormat displayType="text" className='currency' value={dataProfile.DoctorInfo.priceTypeData.valueVi}  thousandSeparator="," suffix={'VND'} />
                             }
                         </span>
                         <span>
-                            {dataProfile && dataProfile.Doctor_Info && language === LANGUAGES.EN &&
-                            <NumericFormat displayType="text" className='currency' value={dataProfile.Doctor_Info.priceTypeData.valueEn}  thousandSeparator="," suffix={'$'} />
+                            {dataProfile && dataProfile.DoctorInfo && language === LANGUAGES.EN &&
+                            <NumericFormat displayType="text" className='currency' value={dataProfile.DoctorInfo.priceTypeData.valueEn}  thousandSeparator="," suffix={'$'} />
                             }
                         </span>
                     </div>   
