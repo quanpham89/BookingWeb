@@ -104,7 +104,7 @@ class ManagePatient extends Component {
         return ( 
             <>
                 <div className='manage-patient-container'>
-                    <div className='m-p-title'><FormattedMessage id='menu.doctor.manage-patient'/></div>
+                    <div className='title'><FormattedMessage id='menu.doctor.manage-patient'/></div>
                     <div className='manage-patient-body row'>
                         <div className='col-4  form-group'>
                             <label><FormattedMessage id='manage-schedule.choose-date'/></label>
@@ -134,7 +134,7 @@ class ManagePatient extends Component {
                                             <td>{language === LANGUAGES.VI ?item.timeTypeDataPatient.valueVi : item.timeTypeDataPatient.valueEn}</td>
                                             <td>{language === LANGUAGES.VI ?item.patientData.genderData.valueVi : item.patientData.genderData.valueEn}</td>
                                             <td>
-                                                <button className='btn btn-primary btn-confirm mx-3' onClick={()=>this.handleConfirm(item)}><FormattedMessage id='booking-modal.confirm'/></button>
+                                                <button className='btn btn-primary btn-confirm mx-3' onClick={()=>this.handleConfirm(item)}><FormattedMessage id='patient.booking-modal.confirm'/></button>
                                             </td>
     
                                         </tr>

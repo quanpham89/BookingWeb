@@ -304,7 +304,7 @@ class ManageDoctor extends Component {
         let {hasOldData} = this.state
         return (
             <div className='manage-doctor-container'>
-                <div className='manage-doctor-title'><FormattedMessage id="admin.manage-doctor"/></div>
+                <div className='title'><FormattedMessage id="admin.manage-doctor"/></div>
                 <div className='doctor-more-info'>
                     <div className='content-left'>
                     <label><FormattedMessage id="admin.choose-doctor"/></label>

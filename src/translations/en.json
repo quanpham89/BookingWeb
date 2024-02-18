@@ -47,7 +47,7 @@
             "manage-doctor":"Manage doctor ",
             "manage-admin":"Manage admin ",
             "crud": "CRUD users",
-            "crud-redux": "CRUD redux",
+            "crud-redux": "Manage members",
             "clinic":"Clinic",
             "manage-clinic":"Manage clinic",
             "specialty":"Specialty",
@@ -95,7 +95,7 @@
         "save": "Save",
         "doctor": "Doctor",
         "show-schedule": "Show schedule",
-        "date":"Date",
+        "date":"Day",
         "time":"Time"
     },
     "patient":{

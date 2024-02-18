@@ -11,8 +11,9 @@ class Login extends Component {
         this.state = {
             userName :'',
             password:'',
-            isShowPassword:false,
-            errorMessage: ''
+            isShowPassword: false,
+            errorMessage: '',
+            isShowAccount: false,
         }
     }
 
@@ -57,6 +58,11 @@ class Login extends Component {
             this.handleLogin()
         }
     }
+    showAccount = ()=>{
+        this.setState({
+            isShowAccount: !this.state.isShowAccount
+        })
+    }
     render() {
         return (
             <div className='login-background'> 
@@ -92,6 +98,28 @@ class Login extends Component {
                         <div className='col-12' style = {{color: 'red'}}>{this.state.errorMessage}</div>
                         <div className='col-12'>
                             <button className=' btn-login' onClick={()=>{this.handleLogin()}}>Log in</button>
+                        </div>
+                        <div className='col-12 info-account'>
+                            <span className= "account" onClick={()=>this.showAccount()}><strong>Account and Password</strong></span>
+                            {this.state.isShowAccount ?
+                            <span><i className="fas fa-eye"></i></span > : 
+                            <span><i className="fas fa-eye-slash"></i></span >
+                            }
+                            {this.state.isShowAccount &&
+                                <div className='row'>
+                                    <div className='main-account col-6'>
+                                            <strong>Admin Account</strong>
+                                            <div><strong>User Name:</strong> adminaccount@gmail.com</div>
+                                            <div><strong>Password:</strong> 123123aa.</div>
+                                        </div>
+                                        <div className='member-account col-6'>
+                                            <strong>Member Account</strong>
+                                            <div><strong>User Name:</strong> hoanganhnhi@gmail.com</div>
+                                            <div><strong>Password:</strong> 123123aa.</div>
+                                        </div>
+                                        <i className='note'>Chú ý kiểm tra dấu cách khi copy tránh trường hợp không đăng nhập được.</i>
+                                    </div>
+                            }
                         </div>
                         {/* <div className='col-12'>
                             <span className='forgot-password'> Forgot your password?</span>

@@ -95,7 +95,6 @@ class DetailSpecialty extends Component {
     render() {
         let {arrDoctorId, detailDoctorSpecialty, listProvince} = this.state
         let {language} = this.props
-        console.log(listProvince)
         return (  
             <div className='detail-specialty-container'><FormattedMessage id="homepage.outstanding-medical-facilities"/>
                 <HomeHeader/>

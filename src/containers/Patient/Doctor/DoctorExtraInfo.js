@@ -68,7 +68,7 @@ class DoctorExtraInfo extends Component {
                         </div>
                     :
                     <>
-                        <div className='title-price'><FormattedMessage id='patient.extra-doctor-info.price'/></div>
+                        {/* <div className='title-price'><FormattedMessage id='patient.extra-doctor-info.price'/></div> */}
                         <div className='detail-info'> 
                             <div className='price'>
                                 <span className='left'><FormattedMessage id='patient.extra-doctor-info.price'/></span> 

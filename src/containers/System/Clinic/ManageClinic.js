@@ -188,7 +188,7 @@ class ManageClinic extends Component {
 
         return ( 
             <div className='manage-specialty-container'>
-                <div className='ms-title '> <FormattedMessage id="admin.manage-clinic"/></div>
+                <div className='title '> <FormattedMessage id="admin.manage-clinic"/></div>
                 <div className='add-new-specialty row'>
                     {!this.state.isChange ?
                     <>

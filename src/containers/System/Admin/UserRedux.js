@@ -224,7 +224,7 @@ class UserRedux extends Component {
         return (
             <div className='user-redux-container'>
                 <div className='title'>
-                    User Redux
+                    <FormattedMessage id="menu.admin.crud-redux"/>
                 </div>
                 <div className="user-redux-body" >
                     <div className='container'>

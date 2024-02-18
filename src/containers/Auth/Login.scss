@@ -2,7 +2,7 @@
     height: 100vh;
     background: linear-gradient(135deg, rgb(153, 33, 252) 0%, rgb(241, 13, 108) 100%);
     .login-container{
-        width: 400px;
+        width: 600px;
         height: 450px;
         margin: auto;
         background-color: white;
@@ -16,6 +16,7 @@
             padding: 10px;
             position: absolute;
             top: 50%;
+            left: 5px;
             transform: translateY(-50%);
             .text-login{
                 text-align: center;
@@ -73,6 +74,27 @@
                 .facebook{
                     background-color: #307aaf;
                 }
+            }
+
+            .info-account {
+                text-align: center;
+
+                .account{
+                    margin-right: 10px;
+                    transition: 0.5s;
+                    &:hover{
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                }
+                .row{
+                    i{  
+                        font-size: 12px;
+                        padding-top: 8px;
+                        margin: auto !important;;
+                    }
+                }
+                
             }
         }
     }

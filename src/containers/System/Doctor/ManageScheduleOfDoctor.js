@@ -55,7 +55,7 @@ class ManageScheduleOfDoctor extends Component {
         }
         if(prevProps.language !== this.props.language){
             this.setState({
-                today: language === LANGUAGES.VI ? moment(new Date(this.state.dateStyle)).format('dddd - DD/MM/YYYY') : moment(new Date(this.state.dateStyle)).locale('en').format('ddd - MM/DD/YYYY')
+                today: language === LANGUAGES.VI ? moment(new Date(this.state.dateStyle)).format('DD/MM/YYYY') : moment(new Date(this.state.dateStyle)).locale('en').format('DD/MM/YYYY')
             })
         }
     }
@@ -160,7 +160,7 @@ class ManageScheduleOfDoctor extends Component {
             })
             this.setState({
                 allTimeRegistration: objRangeTime,
-                today: language === LANGUAGES.VI ? moment(new Date(this.state.dateStyle)).format('dddd - DD/MM/YYYY') : moment(new Date(this.state.dateStyle)).locale('en').format('ddd - MM/DD/YYYY')
+                today: language === LANGUAGES.VI ? moment(new Date(this.state.dateStyle)).format('DD/MM/YYYY') : moment(new Date(this.state.dateStyle)).locale('en').format('DD/MM/YYYY')
             })
         }
         
@@ -173,7 +173,7 @@ class ManageScheduleOfDoctor extends Component {
 
         return (
             <div className='manage-schedule-container'>
-                <div className='m-s-title'>
+                <div className='title'>
                     <FormattedMessage id="manage-schedule.title"/>
                 </div>
                 <div className='container'>

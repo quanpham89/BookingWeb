@@ -83,7 +83,7 @@ class ManageHandbook extends Component {
 
         return ( 
             <div className='manage-handbook-container'>
-                <div className='manage-handbook-title'> <FormattedMessage id="admin.manage-handbook"/></div>
+                <div className='title'> <FormattedMessage id="admin.manage-handbook"/></div>
                 <div className='add-new-handbook row'>
                     <div className='col-6 form-group'>
                     <FormattedMessage id="admin.title"/>
