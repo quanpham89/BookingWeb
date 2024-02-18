@@ -120,6 +120,8 @@ class Login extends Component {
                                         <i className='note'>Chú ý kiểm tra dấu cách khi copy tránh trường hợp không đăng nhập được.</i>
                                     </div>
                             }
+                            <p><i className='note'>Khi truy cập trang web lần đầu tiên, phía back-end cần một chút thời gian (3-4 phút) để khởi động lại (vì không hoạt động 24/7) nhưng kể từ lần thứ hai sẽ không phải chờ lâu như vậy !</i></p>
+
                         </div>
                         {/* <div className='col-12'>
                             <span className='forgot-password'> Forgot your password?</span>

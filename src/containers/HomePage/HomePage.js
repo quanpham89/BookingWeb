@@ -21,7 +21,7 @@ class HomePage extends Component {
         return (
             <>
                 <HomeHeader isShowBanner = {true}/>
-                <Specialty settings= {settings}/>
+<p><i className='note'>Khi truy cập trang web lần đầu tiên, phía back-end cần một chút thời gian (3-4 phút) để khởi động lại (vì không hoạt động 24/7) nhưng kể từ lần thứ hai sẽ không phải chờ lâu như vậy !</i></p>                <Specialty settings= {settings}/>
                 <MedicalFacility settings= {settings} />
                 <OutstandingDoctor settings= {settings}/>
                 <Handbook settings= {settings}/>
