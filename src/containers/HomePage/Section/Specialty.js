@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {getAllSpecialty} from '../../../services/userService'
 import { withRouter } from 'react-router-dom';
+import "./Specialty.scss"
 
 class Specialty extends Component {
     constructor(props){
