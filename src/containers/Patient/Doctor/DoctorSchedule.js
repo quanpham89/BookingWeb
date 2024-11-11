@@ -49,6 +49,27 @@ class DoctorSchedule extends Component {
     upperCaseFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1)
     }
+
+    formatDayOfWeek = (dayOfWeek) =>{
+        switch (dayOfWeek) {
+            case 'Monday':
+                return 'Thứ Hai';
+            case 'Tuesday':
+                return 'Thứ Ba';
+            case 'Wednesday':
+                return 'Thứ Tư';
+            case 'Thursday':
+                return 'Thứ Năm';
+            case 'Friday':
+                return 'Thứ Sáu';
+            case 'Saturday':
+                return 'Thứ Bảy';
+            case 'Sunday':
+                return 'Chủ Nhật';
+            default:
+                return "";
+        }
+    }
     getArrDays = ()=>{
         let arrDate= []
         for(let i = 0;i < 7; i++){
@@ -59,8 +80,10 @@ class DoctorSchedule extends Component {
                     let today = `Hôm nay - ${labelViToday}`
                     obj.label = today
                 }else{
-                    let labelVi = moment(new Date()).add(i, 'days').format('dddd - DD/MM');
-                    obj.label = this.upperCaseFirstLetter(labelVi)
+                    let dayOfWeek = moment().add(i, 'days').format('dddd');
+                    let labelVi = moment(new Date()).add(i, 'days').format('DD/MM');
+                    let day = `${this.formatDayOfWeek(dayOfWeek)}  - ${labelVi}`
+                    obj.label = this.upperCaseFirstLetter(day)
                 }
             }else{
                 if(i===0){
